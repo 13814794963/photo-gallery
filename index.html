@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毛不易 | 照片展览</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>毛不易的故事</h1>
+        <p>从平凡到闪耀的音乐旅程</p>
+    </header>
+
+    <div class="admin-dashboard">
+        <div class="dashboard-header">
+            <h2>照片管理面板</h2>
+            <div class="dashboard-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalPhotos">0</span>
+                    <span class="stat-label">总照片数</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-tools">
+            <div class="tool-card" id="addPhotoCard">
+                <div class="tool-icon">➕</div>
+                <h3>添加单张</h3>
+                <form id="addPhotoForm" class="tool-content">
+                    <div class="form-group">
+                        <label>选择照片</label>
+                        <input type="file" id="photoInput" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label>照片说明</label>
+                        <input type="text" id="captionInput" placeholder="输入照片说明" required>
+                    </div>
+                    <button type="submit" class="dashboard-btn">添加</button>
+                </form>
+            </div>
+
+            <div class="tool-card" id="batchUploadCard">
+                <div class="tool-icon">📁</div>
+                <h3>批量上传</h3>
+                <div class="tool-content">
+                    <div class="drop-zone" id="dropZone">
+                        <span>拖放照片到这里或点击上传</span>
+                        <input type="file" id="batchPhotoInput" accept="image/*" multiple hidden>
+                    </div>
+                    <div class="upload-preview" id="uploadPreview"></div>
+                </div>
+            </div>
+
+            <div class="tool-card" id="deletePhotoCard">
+                <div class="tool-icon">🗑️</div>
+                <h3>删除照片</h3>
+                <div class="tool-content">
+                    <button id="toggleDeleteMode" class="dashboard-btn">进入删除模式</button>
+                    <p class="delete-tip">删除模式下点击照片即可删除</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <!-- 图片将通过 JavaScript 动态加载 -->
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>关于毛不易</h3>
+                <p>中国内地流行乐男歌手、音乐人。代表作《消愁》《像我这样的人》等。</p>
+            </div>
+            <div class="footer-section">
+                <h3>主要作品</h3>
+                <ul>
+                    <li>消愁</li>
+                    <li>像我这样的人</li>
+                    <li>无问</li>
+                    <li>借</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>获奖记录</h3>
+                <ul>
+                    <li>2018 年度最佳新人</li>
+                    <li>2019 年度最佳男歌手</li>
+                    <li>2020 年度最受欢迎歌手</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 毛不易照片展览馆 | 用音乐诉说故事</p>
+        </div>
+    </footer>
+
+    <div class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content">
+        <div class="caption"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
